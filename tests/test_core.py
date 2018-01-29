@@ -78,6 +78,11 @@ class TestCore(unittest.TestCase):
         assert isinstance(vulnerabilities, dict)
         assert vulnerabilities['data']
 
+    def test_get_vulnerability(self):
+        vulnerability = pyionic.core.Vulnerability()
+        vulnerability_data = vulnerability.get_vulnerability('CVE-2017-5753')
+        assert isinstance(vulnerability_data, dict)
+        assert vulnerability_data['data']
 
 if __name__ == '__main__':
     unittest.main()

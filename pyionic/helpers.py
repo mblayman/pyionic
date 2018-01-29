@@ -6,7 +6,7 @@ def get_envvars():
     if os.environ.get('IONCHANNEL_TOKEN') is not None:
         return os.environ['IONCHANNEL_TOKEN']
     else:
-        return 'Ion Channel Token not set'
+        exit('Ion Channel Token not set')
 
 
 def get_api_endpoint():

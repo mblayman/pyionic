@@ -77,3 +77,8 @@ class Vulnerability:
         url = self.endpoint + '/v1/vulnerability/getVulnerabilities?product=%s&version=%s' % (product, version)
         res = requests.get(url)
         return res.json()
+
+    def get_vulnerability(self, cve_id):
+        url = self.endpoint + '/v1/vulnerability/getVulnerability?external_id=%s' % cve_id
+        res = requests.get(url)
+        return res.json()
