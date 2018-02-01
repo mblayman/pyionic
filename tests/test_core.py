@@ -84,5 +84,38 @@ class TestCore(unittest.TestCase):
         assert isinstance(vulnerability_data, dict)
         assert vulnerability_data['data']
 
+    def test_get_products(self):
+        vulnerability = pyionic.core.Vulnerability()
+        vulnerability_data = vulnerability.get_products('cpe:/a:ruby-lang:ruby:1.8.7')
+        assert isinstance(vulnerability_data, dict)
+        assert vulnerability_data['data']
+
+    def test_get_rulesets(self):
+        users = pyionic.core.Users()
+        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        rulesets = pyionic.core.Rulesets()
+        rulesets_data = rulesets.get_rulesets(team_id)
+        assert isinstance(rulesets_data, dict)
+        assert rulesets_data['data']
+
+    def test_get_ruleset(self):
+        users = pyionic.core.Users()
+        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        rulesets = pyionic.core.Rulesets()
+        ruleset_data = rulesets.get_rulesets(team_id)['data'][0]
+        assert isinstance(ruleset_data, dict)
+        assert ruleset_data['id']
+
+    def test_get_applied_ruleset_for_project(self):
+        users = pyionic.core.Users()
+        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        projects = pyionic.core.Projects()
+        project_id = projects.get_projects(team_id)['data'][0]['id']
+        ruleset = pyionic.core.Rulesets()
+        data = ruleset.get_applied_ruleset_for_project(team_id, project_id)
+        assert isinstance(data, dict)
+        assert data
+
+
 if __name__ == '__main__':
     unittest.main()
