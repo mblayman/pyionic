@@ -62,6 +62,11 @@ class Scanner:
         url = self.endpoint + self.url + 'analyzeProject?team_id=%s&project_id=%s' % (team_id, project_id)
         return requests.post(url, headers={"authorization": self.token}).json()
 
+    def get_analysis_status(self, team_id, project_id, analysis_id):
+        url = self.endpoint + '/v1/scanner/getAnalysisStatus?team_id=%s&project_id=%s&id=%s' % (team_id, project_id, analysis_id)
+        res = requests.get(url, headers={"authorization": self.token})
+        return res.json()
+
 
 class Teams:
     def __init__(self):

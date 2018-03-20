@@ -18,7 +18,7 @@ class TestCore(unittest.TestCase):
 
     def test_get_team(self):
         users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        team_id = list(users.get_self()['data']['teams'].keys())[0]
         teams = pyionic.core.Teams()
         data = teams.get_team(team_id)['data']
         assert isinstance(data, dict)
@@ -26,7 +26,7 @@ class TestCore(unittest.TestCase):
 
     def test_get_projects(self):
         users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        team_id = list(users.get_self()['data']['teams'].keys())[0]
         projects = pyionic.core.Projects()
         data = projects.get_projects(team_id)
         assert isinstance(data, dict)
@@ -34,43 +34,59 @@ class TestCore(unittest.TestCase):
 
     def test_get_project(self):
         users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        team_id = list(users.get_self()['data']['teams'].keys())[0]
         projects = pyionic.core.Projects()
         project_id = projects.get_projects(team_id)['data'][0]['id']
         data = projects.get_project(team_id, project_id)
         assert isinstance(data, dict)
         assert data['data']
+    #
+    # def test_get_analysis_summery(self):
+    #     users = pyionic.core.Users()
+    #     team_id = list(users.get_self()['data']['teams'].keys())[0]
+    #     print(team_id)
+    #     projects = pyionic.core.Projects()
+    #     project_id = projects.get_projects(team_id)['data'][0]['id']
+    #     print(project_id)
+    #     analysis = pyionic.core.Analysis()
+    #     data = analysis.get_analysis_summery(team_id, project_id)
+    #     print(data)
+    #     assert isinstance(data, dict)
+    #     assert data['data']
 
-    def test_get_analysis_summery(self):
-        users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
-        projects = pyionic.core.Projects()
-        project_id = projects.get_projects(team_id)['data'][0]['id']
-        analysis = pyionic.core.Analysis()
-        data = analysis.get_analysis_summery(team_id, project_id)
-        assert isinstance(data, dict)
-        assert data['data']
-
-    def test_get_analysis(self):
-        users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
-        projects = pyionic.core.Projects()
-        project_id = projects.get_projects(team_id)['data'][0]['id']
-        analysis = pyionic.core.Analysis()
-        analysis_id = analysis.get_analysis_summery(team_id, project_id)['data']['id']
-        data = analysis.get_analysis(team_id, project_id, analysis_id)
-        assert isinstance(data, dict)
-        assert data['data']
+    # def test_get_analysis(self):
+    #     users = pyionic.core.Users()
+    #     team_id = list(users.get_self()['data']['teams'].keys())[0]
+    #     projects = pyionic.core.Projects()
+    #     project_id = projects.get_projects(team_id)['data'][0]['id']
+    #     analysis = pyionic.core.Analysis()
+    #     analysis_id = analysis.get_analysis_summery(team_id, project_id)['data']['id']
+    #     data = analysis.get_analysis(team_id, project_id, analysis_id)
+    #     assert isinstance(data, dict)
+    #     assert data['data']
 
     def test_analyze_project(self):
         users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        team_id = list(users.get_self()['data']['teams'].keys())[0]
         projects = pyionic.core.Projects()
         project_id = projects.get_projects(team_id)['data'][0]['id']
         scanner = pyionic.core.Scanner()
         scan = scanner.analyze_project(team_id, project_id)
         assert isinstance(scan, dict)
         assert scan['data']['status'] == 'accepted'
+
+    # def test_get_analysis_status(self):
+    #     users = pyionic.core.Users()
+    #     team_id = list(users.get_self()['data']['teams'].keys())[0]
+    #     projects = pyionic.core.Projects()
+    #     project_id = projects.get_projects(team_id)['data'][0]['id']
+    #     analysis = pyionic.core.Analysis()
+    #     pprint(analysis.get_analysis_summery(team_id, project_id))
+    #     analysis_id = analysis.get_analysis_summery(team_id, project_id)['data']['id']
+    #     scanner = pyionic.core.Scanner()
+    #     data = scanner.get_analysis_status(team_id, project_id, analysis_id)
+    #     assert isinstance(data, dict)
+    #     assert data
 
     def test_get_vulnerabilities(self):
         vulnerability = pyionic.core.Vulnerability()
@@ -92,7 +108,7 @@ class TestCore(unittest.TestCase):
 
     def test_get_rulesets(self):
         users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        team_id = list(users.get_self()['data']['teams'].keys())[0]
         rulesets = pyionic.core.Rulesets()
         rulesets_data = rulesets.get_rulesets(team_id)
         assert isinstance(rulesets_data, dict)
@@ -100,7 +116,7 @@ class TestCore(unittest.TestCase):
 
     def test_get_ruleset(self):
         users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        team_id = list(users.get_self()['data']['teams'].keys())[0]
         rulesets = pyionic.core.Rulesets()
         ruleset_data = rulesets.get_rulesets(team_id)['data'][0]
         assert isinstance(ruleset_data, dict)
@@ -108,7 +124,7 @@ class TestCore(unittest.TestCase):
 
     def test_get_applied_ruleset_for_project(self):
         users = pyionic.core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[4]
+        team_id = list(users.get_self()['data']['teams'].keys())[0]
         projects = pyionic.core.Projects()
         project_id = projects.get_projects(team_id)['data'][0]['id']
         ruleset = pyionic.core.Rulesets()
