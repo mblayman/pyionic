@@ -18,7 +18,6 @@ class TestHelpers(unittest.TestCase):
 
     def test_get_api_endpoint(self):
         os.environ['IONCHANNEL_ENDPOINT'] = 'https://api.ionchannel.io'
-        print(helpers.get_api_endpoint())
-
+        
 if __name__ == '__main__':
     unittest.main()
