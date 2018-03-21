@@ -21,6 +21,7 @@ setup(
     long_description=readme,
     author='Patrick Pierson',
     author_email='patrick.pierson@ionchannel.io',
+    include_package_data=True,
     install_requires=requires,
     url='https://github.com/ion-channel/pyionic',
     license=license,
