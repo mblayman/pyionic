@@ -12,7 +12,7 @@ class TestHelpers(unittest.TestCase):
 
     def test_get_envvars(self):
         with self.assertRaises(SystemExit) as cm:
-            del os.environ['IONCHANNEL_TOKEN']
+            del os.environ['IONCHANNEL_SECRET_KEY']
             helpers.get_envvars()
             self.assertEqual(cm.exception.code, 1)
 
