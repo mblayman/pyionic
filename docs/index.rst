@@ -15,9 +15,9 @@ Install PyIonic:
 
   pip install pyionic
 
-Set the IONCHANNEL_TOKEN:
+Set the IONCHANNEL_SECRET_KEY:
 
-  export IONCHANNEL_TOKEN=####IONCHANNEL_TOKEN####
+  export IONCHANNEL_SECRET_KEY=####IONCHANNEL_SECRET_KEY####
 
 Write code:
 
@@ -39,7 +39,7 @@ Tests
 
 To setup tests you must first export a valid token for the pyionic test team:
 
-  export IONCHANNEL_TOKEN=####IONCHANNEL_TOKEN####
+  export IONCHANNEL_SECRET_KEY=####IONCHANNEL_SECRET_KEY####
 
 
 Then run:

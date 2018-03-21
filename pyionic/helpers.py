@@ -4,8 +4,8 @@ import sys
 
 def get_envvars():
     """Get Ion Channel token from envvars."""
-    if os.environ.get('IONCHANNEL_TOKEN') is not None:
-        return os.environ['IONCHANNEL_TOKEN']
+    if os.environ.get('IONCHANNEL_SECRET_KEY') is not None:
+        return os.environ['IONCHANNEL_SECRET_KEY']
     else:
         print('Ion Channel Token not set')
         sys.exit(1)
