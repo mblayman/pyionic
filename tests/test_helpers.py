@@ -17,7 +17,9 @@ class TestHelpers(unittest.TestCase):
             self.assertEqual(cm.exception.code, 1)
 
     def test_get_api_endpoint(self):
-        os.environ['IONCHANNEL_ENDPOINT'] = 'https://api.ionchannel.io'
-        
+        os.environ['IONCHANNEL_ENDPOINT'] = 'https://api.test'
+        helpers.get_api_endpoint()
+        assert(helpers.get_api_endpoint() == 'https://api.test' )
+
 if __name__ == '__main__':
     unittest.main()
