@@ -1,0 +1,12 @@
+[run]
+omit =
+    # omit anything in a .local directory anywhere
+    */.local/*
+    # omit everything in /usr
+    /usr/*
+    # omit tests folder
+    */tests/*
+    # omit tox files
+    .tox/*
+    # omit travis files
+    */virtualenv/*
