@@ -5,6 +5,9 @@ PyIonic
    :target: http://pyionic.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
+.. image:: https://travis-ci.org/ion-channel/pyionic.svg?branch=master
+   :target: https://travis-ci.org/ion-channel/pyionic
+
 .. image:: https://img.shields.io/pypi/v/pyionic.svg
    :target: https://pypi.python.org/pypi/pyionic
 
