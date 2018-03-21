@@ -1,6 +1,13 @@
 PyIonic
 ========================
 
+.. image:: https://readthedocs.org/projects/pyionic/badge/?version=latest
+   :target: http://pyionic.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. image:: https://img.shields.io/pypi/v/pyionic.svg
+   :target: https://pypi.python.org/pypi/pyionic
+
 PyIonic is a Python library to interact with Ion Channel's API.
 
 Tests
