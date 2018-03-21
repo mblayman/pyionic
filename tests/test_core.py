@@ -66,15 +66,15 @@ class TestCore(unittest.TestCase):
         assert isinstance(data, dict)
         assert data['data']
 
-    def test_analyze_project(self):
-        users = core.Users()
-        team_id = list(users.get_self()['data']['teams'].keys())[0]
-        projects = core.Projects()
-        project_id = projects.get_projects(team_id)['data'][0]['id']
-        scanner = core.Scanner()
-        scan = scanner.analyze_project(team_id, project_id)
-        assert isinstance(scan, dict)
-        assert scan['data']['status'] == 'accepted'
+    # def test_analyze_project(self):
+    #     users = core.Users()
+    #     team_id = list(users.get_self()['data']['teams'].keys())[0]
+    #     projects = core.Projects()
+    #     project_id = projects.get_projects(team_id)['data'][0]['id']
+    #     scanner = core.Scanner()
+    #     scan = scanner.analyze_project(team_id, project_id)
+    #     assert isinstance(scan, dict)
+    #     assert scan['data']['status'] == 'accepted'
 
     def test_get_analysis_status(self):
         users = core.Users()
