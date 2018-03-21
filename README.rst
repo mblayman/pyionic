@@ -16,26 +16,37 @@ PyIonic is a Python library to interact with Ion Channel's API.
 Example
 ---------------
 
-```
-export IONCHANNEL_TOKEN=####IONCHANNEL_TOKEN####
-```
+Install PyIonic:
 
-```python
-from pyionic import core
+  pip install pyionic
 
-vuln = core.Vulnerability()
-vulnerabilities = vuln.get_vulnerabilities('python', '3.4')
-print('%s total vulnerabilities found.' % vulnerabilities['meta']['total_count'])
-```
+Set the IONCHANNEL_TOKEN:
+
+  export IONCHANNEL_TOKEN=####IONCHANNEL_TOKEN####
+
+Write code:
+
+.. code-block:: python
+
+  from pyionic import core
+  vuln = core.Vulnerability()
+  vulnerabilities = vuln.get_vulnerabilities('python', '3.4')
+  print('%s total vulnerabilities found.' % vulnerabilities['meta']['total_count'])
+
+Run code:
+
+  python test.py
+  
+  7 total vulnerabilities found.
 
 Tests
 ---------------
 
-To setup tests you must first export a valid token for the pyionic test team.::
+To setup tests you must first export a valid token for the pyionic test team:
 
   export IONCHANNEL_TOKEN=####IONCHANNEL_TOKEN####
 
 
-Then run::
+Then run:
 
   pipenv run python setup.py test

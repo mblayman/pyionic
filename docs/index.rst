@@ -12,29 +12,39 @@ Example
 ---------------
 
 Install PyIonic:
-```
-pip install pyionic
-```
+
+  pip install pyionic
 
 Set the IONCHANNEL_TOKEN:
-```
-export IONCHANNEL_TOKEN=####IONCHANNEL_TOKEN####
-```
+
+  export IONCHANNEL_TOKEN=####IONCHANNEL_TOKEN####
 
 Write code:
-```python
-from pyionic import core
 
-vuln = core.Vulnerability()
-vulnerabilities = vuln.get_vulnerabilities('python', '3.4')
-print('%s total vulnerabilities found.' % vulnerabilities['meta']['total_count'])
-```
+.. code-block:: python
+
+  from pyionic import core
+  vuln = core.Vulnerability()
+  vulnerabilities = vuln.get_vulnerabilities('python', '3.4')
+  print('%s total vulnerabilities found.' % vulnerabilities['meta']['total_count'])
 
 Run code:
-```
-python test.py
-7 total vulnerabilities found.
-```
+
+  python test.py
+
+  7 total vulnerabilities found.
+
+Tests
+---------------
+
+To setup tests you must first export a valid token for the pyionic test team:
+
+  export IONCHANNEL_TOKEN=####IONCHANNEL_TOKEN####
+
+
+Then run:
+
+  pipenv run python setup.py test
 
 .. toctree::
    :maxdepth: 2
