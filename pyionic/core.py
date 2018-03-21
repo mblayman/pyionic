@@ -4,6 +4,8 @@ import requests
 
 
 class Analysis:
+    '''The Analysis class interacts with the Animal endpoints to return
+    Analysis data. The data returned is json formated.'''
     def __init__(self):
         self.token = helpers.get_envvars()
         self.endpoint = helpers.get_api_endpoint()
@@ -102,7 +104,7 @@ class Vulnerability:
         return requests.get(url).json()
 
     def get_vulnerabilities(self, product, version):
-        url = self.endpoint + self.url + 'getVulnerabilities?product=%s&version=%s' % (product, version)
+        url = self.endpoint + self.url + 'getVulnerabilities?product=%s&version=%s&limit=1000' % (product, version)
         return requests.get(url).json()
 
     def get_vulnerability(self, external_id):

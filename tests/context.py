@@ -5,3 +5,4 @@ import os
 
 from pyionic import core
 from pyionic import helpers
+from pyionic import reporting
