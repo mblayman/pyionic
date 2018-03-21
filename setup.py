@@ -16,7 +16,7 @@ requires = [
 
 setup(
     name='pyionic',
-    version='0.0.1',
+    version='0.0.2',
     description='Python package for the Ion Channel API',
     long_description=readme,
     author='Patrick Pierson',
