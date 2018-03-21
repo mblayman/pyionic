@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 def get_envvars():
     """Get Ion Channel token from envvars."""
     if os.environ.get('IONCHANNEL_TOKEN') is not None:
