@@ -6,10 +6,6 @@ from setuptools import setup, find_packages
 with open('README.rst') as f:
     readme = f.read()
 
-with open('LICENSE') as f:
-    license = f.read()
-
-
 requires = [
     'requests>=2.18.4'
 ]
@@ -25,6 +21,6 @@ setup(
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",    
     install_requires=requires,
     url='https://github.com/ion-channel/pyionic',
-    license=license,
+    license='BSD',
     packages=find_packages(exclude=('tests', 'docs'))
 )
