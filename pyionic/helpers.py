@@ -13,7 +13,7 @@ def get_envvars():
 
 def get_api_endpoint():
     """Get Ion Channel endpoint from envvars."""
-    if os.environ.get('IONCHANNEL_ENDPOINT') is not None:
-        return os.environ['IONCHANNEL_ENDPOINT']
+    if os.environ.get('IONCHANNEL_ENDPOINT_URL') is not None:
+        return os.environ['IONCHANNEL_ENDPOINT_URL']
     else:
         return 'https://api.ionchannel.io'
