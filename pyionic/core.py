@@ -103,7 +103,7 @@ class Vulnerability:
         url = self.endpoint + self.url + 'getProducts?external_id=%s' % external_id
         return requests.get(url).json()
 
-    def get_vulnerabilities(self, product, version):
+    def get_vulnerabilities(self, product, version=''):
         url = self.endpoint + self.url + 'getVulnerabilities?product=%s&version=%s&limit=1000' % (product, version)
         return requests.get(url).json()
 
