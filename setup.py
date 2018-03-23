@@ -12,13 +12,13 @@ requires = [
 
 setup(
     name='pyionic',
-    version='0.0.3',
+    version='0.0.4',
     description='Python package for the Ion Channel API',
     long_description=readme,
     author='Patrick Pierson',
     author_email='patrick.pierson@ionchannel.io',
     include_package_data=True,
-    python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",    
+    python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     install_requires=requires,
     url='https://github.com/ion-channel/pyionic',
     license='BSD',
