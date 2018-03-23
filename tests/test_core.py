@@ -93,6 +93,9 @@ class TestCore(unittest.TestCase):
         vulnerabilities = vulnerability.get_vulnerabilities('python', '3.4')
         assert isinstance(vulnerabilities, dict)
         assert vulnerabilities['data']
+        vulnerabilities = vulnerability.get_vulnerabilities('python')
+        assert isinstance(vulnerabilities, dict)
+        assert vulnerabilities['data']
 
     def test_get_vulnerability(self):
         vulnerability = core.Vulnerability()
