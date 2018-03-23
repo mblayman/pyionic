@@ -1,4 +1,3 @@
-from . import helpers
 from . import core
 
 
@@ -20,6 +19,7 @@ class Projects:
             project_tuple = project['id'], project['name']
             project_info.append(project_tuple)
         return project_info
+
 
 class Vulnerability:
 
