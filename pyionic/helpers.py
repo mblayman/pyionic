@@ -2,13 +2,12 @@ import os
 import sys
 
 
-def get_envvars():
+def get_token():
     """Get Ion Channel token from envvars."""
-    if os.environ.get('IONCHANNEL_SECRET_KEY') is not None:
+    try:
         return os.environ['IONCHANNEL_SECRET_KEY']
-    else:
-        print('Ion Channel Token not set')
-        sys.exit(1)
+    except KeyError:
+        sys.exit('Ion Channel Token not set')
 
 
 def get_api_endpoint():

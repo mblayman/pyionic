@@ -7,7 +7,7 @@ class Analysis:
     '''The Analysis class interacts with the Animal endpoints to return
     Analysis data. The data returned is json formated.'''
     def __init__(self):
-        self.token = helpers.get_envvars()
+        self.token = helpers.get_token()
         self.endpoint = helpers.get_api_endpoint()
         self.url = '/v1/animal/'
 
@@ -22,7 +22,7 @@ class Analysis:
 
 class Projects:
     def __init__(self):
-        self.token = helpers.get_envvars()
+        self.token = helpers.get_token()
         self.endpoint = helpers.get_api_endpoint()
         self.url = '/v1/project/'
 
@@ -37,7 +37,7 @@ class Projects:
 
 class Rulesets:
     def __init__(self):
-        self.token = helpers.get_envvars()
+        self.token = helpers.get_token()
         self.endpoint = helpers.get_api_endpoint()
         self.url = '/v1/ruleset/'
 
@@ -56,7 +56,7 @@ class Rulesets:
 
 class Scanner:
     def __init__(self):
-        self.token = helpers.get_envvars()
+        self.token = helpers.get_token()
         self.endpoint = helpers.get_api_endpoint()
         self.url = '/v1/scanner/'
 
@@ -72,7 +72,7 @@ class Scanner:
 
 class Teams:
     def __init__(self):
-        self.token = helpers.get_envvars()
+        self.token = helpers.get_token()
         self.endpoint = helpers.get_api_endpoint()
         self.url = '/v1/teams/'
 
@@ -84,7 +84,7 @@ class Teams:
 
 class Users:
     def __init__(self):
-        self.token = helpers.get_envvars()
+        self.token = helpers.get_token()
         self.endpoint = helpers.get_api_endpoint()
         self.url = '/v1/users/'
 
@@ -95,7 +95,7 @@ class Users:
 
 class Vulnerability:
     def __init__(self):
-        self.token = helpers.get_envvars()
+        self.token = helpers.get_token()
         self.endpoint = helpers.get_api_endpoint()
         self.url = '/v1/vulnerability/'
 
